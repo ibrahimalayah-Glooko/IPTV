@@ -110,6 +110,11 @@ ARABIC_PRIORITY_COUNTRIES = {
     "united_arab_emirates",
 }
 
+SHAHID_URL_MARKERS = (
+    "shahid.net",
+    "shd-gcp-live.edgenextcdn.net",
+)
+
 
 class Channel:
     def __init__(self, group, md_line, country_code=""):
@@ -146,6 +151,12 @@ def playlist_sort_key(filename):
     return (0 if arabic_priority else 1, filename)
 
 
+def include_in_mbc_shahid_playlist(channel):
+    normalized_name = channel.name.lower()
+    normalized_url = channel.url.lower()
+    return "mbc" in normalized_name or any(marker in normalized_url for marker in SHAHID_URL_MARKERS)
+
+
 def main():
     base_dir = os.path.dirname(os.path.abspath(__file__))
     lists_dir = os.path.join(base_dir, "lists")
@@ -159,11 +170,14 @@ def main():
     processed_epg_list = ", ".join(epg_urls)
     head_playlist = f'#EXTM3U x-tvg-url="{processed_epg_list}"\n'
     arabic_playlist_path = os.path.join(dir_playlists, "playlist_arabic.m3u8")
+    mbc_shahid_playlist_path = os.path.join(dir_playlists, "playlist_mbc_shahid.m3u8")
 
     with open(os.path.join(base_dir, "playlist.m3u8"), "w", encoding='utf-8') as playlist, \
-         open(arabic_playlist_path, "w", encoding='utf-8') as arabic_playlist:
+         open(arabic_playlist_path, "w", encoding='utf-8') as arabic_playlist, \
+         open(mbc_shahid_playlist_path, "w", encoding='utf-8') as mbc_shahid_playlist:
         playlist.write(head_playlist)
         arabic_playlist.write(head_playlist)
+        mbc_shahid_playlist.write(head_playlist)
         for filename in sorted(os.listdir(lists_dir), key=playlist_sort_key):
             if filename == "README.md" or not filename.endswith(".md"):
                 continue
@@ -188,6 +202,8 @@ def main():
                     print(m3u_line, file=playlist_country)
                     if include_in_arabic_playlist:
                         print(m3u_line, file=arabic_playlist)
+                    if include_in_mbc_shahid_playlist(channel):
+                        print(m3u_line, file=mbc_shahid_playlist)
 
 if __name__ == "__main__":
     main()

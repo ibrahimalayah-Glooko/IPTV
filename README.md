@@ -101,6 +101,7 @@ Arabic playlists
 The repository also generates a dedicated Arabic bundle under `playlists/playlist_arabic.m3u8`, alongside the existing country and category playlists.
 
 - Combined Arabic bundle: https://raw.githubusercontent.com/ibrahimalayah-Glooko/IPTV/master/playlists/playlist_arabic.m3u8
+- MBC + Shahid bundle: https://raw.githubusercontent.com/ibrahimalayah-Glooko/IPTV/master/playlists/playlist_mbc_shahid.m3u8
 - Arabic news: https://raw.githubusercontent.com/ibrahimalayah-Glooko/IPTV/master/playlists/playlist_zz_news_ar.m3u8
 - Arabic documentaries: https://raw.githubusercontent.com/ibrahimalayah-Glooko/IPTV/master/playlists/playlist_zz_documentaries_ar.m3u8
 - Egypt: https://raw.githubusercontent.com/ibrahimalayah-Glooko/IPTV/master/playlists/playlist_egypt.m3u8
