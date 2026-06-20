@@ -160,8 +160,14 @@ def main():
 
     with open(os.path.join(base_dir, "epglist.txt"), encoding='utf-8') as epg_file:
         epg_urls = [line.strip() for line in epg_file if line.strip()]
-    processed_epg_list = ", ".join(epg_urls)
-    head_playlist = f'#EXTM3U x-tvg-url="{processed_epg_list}"\n'
+    # Use only the all-sources EPG URL in the header so that IPTV apps with
+    # line-length limits (e.g. ssiptvpro) can parse the playlist.  The
+    # ALL_SOURCES feed is a comprehensive aggregate of all individual feeds.
+    all_sources_url = next(
+        (u for u in epg_urls if "ALL_SOURCES" in u),
+        ", ".join(epg_urls),
+    )
+    head_playlist = f'#EXTM3U x-tvg-url="{all_sources_url}"\n'
     arabic_playlist_path = os.path.join(dir_playlists, "playlist_arabic.m3u8")
     mbc_shahid_playlist_path = os.path.join(dir_playlists, "playlist_mbc_shahid.m3u8")
 
