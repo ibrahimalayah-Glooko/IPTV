@@ -110,12 +110,6 @@ ARABIC_PRIORITY_COUNTRIES = {
     "united_arab_emirates",
 }
 
-SHAHID_URL_MARKERS = (
-    "shahid.net",
-    "shd-gcp-live.edgenextcdn.net",
-)
-
-
 class Channel:
     def __init__(self, group, md_line, country_code=""):
         self.group = group
@@ -151,10 +145,9 @@ def playlist_sort_key(filename):
     return (0 if arabic_priority else 1, filename)
 
 
-def include_in_mbc_shahid_playlist(channel):
+def include_in_mbc_shahid_playlist(channel, country_key):
     normalized_name = channel.name.lower()
-    normalized_url = channel.url.lower()
-    return "mbc" in normalized_name or any(marker in normalized_url for marker in SHAHID_URL_MARKERS)
+    return country_key in ARABIC_PLAYLIST_KEYS and "mbc" in normalized_name
 
 
 def main():
@@ -202,7 +195,7 @@ def main():
                     print(m3u_line, file=playlist_country)
                     if include_in_arabic_playlist:
                         print(m3u_line, file=arabic_playlist)
-                    if include_in_mbc_shahid_playlist(channel):
+                    if include_in_mbc_shahid_playlist(channel, country_key):
                         print(m3u_line, file=mbc_shahid_playlist)
 
 if __name__ == "__main__":
