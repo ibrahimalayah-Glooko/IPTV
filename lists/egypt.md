@@ -10,7 +10,7 @@
 | 6  | Coptic TV | [>](https://ctv.icopts.app/CTV/index.fmp4.m3u8) | <img height="20" src="https://upload.wikimedia.org/wikipedia/en/4/4c/Coptic_news.jpg"/> | CopticTV.eg |
 | 7  | Huda TV | [>](https://cdn.bestream.io:19360/elfaro1/elfaro1.m3u8) | <img height="20" src="https://upload.wikimedia.org/wikipedia/commons/5/58/Logo_huda_%D8%AD%D8%AC%D9%85_%D9%83%D8%A8%D9%8A%D8%B1.gif"/> | HudaTV.eg |
 | 8  | Koogi TV | [>](https://5d658d7e9f562.streamlock.net/koogi.tv/koogi.smil/playlist.m3u8) | <img height="20" src=""/> | KoogiTV.eg |
-| 9  | MBC Masr 1 | [>](https://mbc1-enc.edgenextcdn.net/out/v1/d5036cabf11e45bf9d0db410ca135c18/index.m3u8) | <img height="20" src="https://upload.wikimedia.org/wikipedia/commons/7/7c/MBC_Masr_Logo.png"/> | MBCMasr1.eg |
-| 10  | MBC Masr 2 | [>](https://shls-masr2-ak.akamaized.net/out/v1/f683685242b549f48ea8a5171e3e993a/index.m3u8) | <img height="20" src="https://upload.wikimedia.org/wikipedia/commons/5/53/MBC_Masr_2_Logo.svg"/> | MBCMasr2.eg |
+| 9  | MBC Masr 1 | [>](https://shd-gcp-live.edgenextcdn.net/live/bitmovin-mbc-masr/956eac069c78a35d47245db6cdbb1575/index.m3u8) | <img height="20" src="https://upload.wikimedia.org/wikipedia/commons/7/7c/MBC_Masr_Logo.png"/> | MBCMasr1.eg |
+| 10  | MBC Masr 2 | [>](https://shd-gcp-live.edgenextcdn.net/live/bitmovin-mbc-masr-2/754931856515075b0aabf0e583495c68/index.m3u8) | <img height="20" src="https://upload.wikimedia.org/wikipedia/commons/5/53/MBC_Masr_2_Logo.svg"/> | MBCMasr2.eg |
 | 11  | Rotana Cinema | [>](https://rotana.hibridcdn.net/rotananet/cinemamasr_net-7Y83PP5adWixDF93/playlist.m3u8) | <img height="20" src="https://upload.wikimedia.org/wikipedia/commons/9/92/Rotana_Cinema_Egy.png"/> | RotanaCinema.eg |
 | 12  | Watan TV | [>](https://rp.tactivemedia.com/watantv_source/live/playlist.m3u8) | <img height="20" src=""/> | WatanTV.eg |
